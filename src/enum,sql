@@ -1,0 +1,20 @@
+--покажет тех у кого в имени 6 букв
+select*from programmers where first_name like '%______';
+--покажет тех у кого имя начинается с буквы 'N'
+select*from programmers where first_name like 'N%';
+--пожажет тех у кого имя заканчивается с буквы 'n'
+select*from programmers where first_name like '%n';
+--пожазывает годовую зарплату людей ,просто умножили на 12
+select first_name,salary*12 as mounth_income from programmers;
+--соединяет имю и фамилию и покажет как полное имя
+select concat(first_name,'',last_name) as full_name from programmers;
+--покажет зарплаты от большего к меньшей 'desc'
+select first_name,salary from programmers order by salary desc ;
+--покажет зарплаты от меньшей к большему 'asc'
+select first_name,salary from programmers order by salary asc ;
+-- нужно писать по отдельности ,пример как не нужно писать : select first_name,experience,salary from programmers order by experience,salary desc;
+select first_name,experience,salary from programmers order by experience desc,salary desc;
+--покажет языки програмирования не считая дубликатов ,например если в таблице есть несколько java ,то покажет только один java;
+select distinct programming_language from programmers;
+--покажет первых 5 програмистов ;
+select * from programmers limit 5;
